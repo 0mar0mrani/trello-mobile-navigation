@@ -1,0 +1,16 @@
+{
+  "name": "trello",
+  "version": "1.0.0",
+  "description": "A copy of the offical website for practice",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server --browser='Google Chrome'",
+    "start": "npm-run-all --parallel devserver watch:sass"
+  },
+  "author": "Omar Omrani",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.3"
+  }
+}
