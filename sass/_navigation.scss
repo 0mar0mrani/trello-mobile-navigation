@@ -35,7 +35,7 @@
       height: 3px;
       left: 0;
       border-radius: 3px;
-      background-color: rgb(23, 43, 77);
+      background-color: var(--color-text);
 
       &:nth-child(1) {
         top: 1.5px;
