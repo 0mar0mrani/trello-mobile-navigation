@@ -61,6 +61,10 @@
     min-height: 7rem;
     display: flex;
     align-items: center;
+
+    &:first-child {
+      border-top: solid 1px #dfe1e6;
+    }
   }
 
   &__button {

@@ -64,6 +64,8 @@ body {
     min-height: 7rem;
     display: flex;
     align-items: center; }
+    .navigation__categories:first-child {
+      border-top: solid 1px #dfe1e6; }
   .navigation__button {
     display: block;
     width: 100%;
