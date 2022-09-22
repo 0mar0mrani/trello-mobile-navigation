@@ -1,3 +1,6 @@
+:root {
+  --color-text: #172b4d; }
+
 *,
 *::after,
 *::before {
@@ -9,8 +12,11 @@ html {
   font-size: 10px; }
 
 .header {
-  height: 7rem;
-  width: 100%; }
+  height: 7rem; }
+  .header__layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
   .header__logo-container {
     width: 11rem;
     height: auto;
@@ -18,3 +24,27 @@ html {
   .header__logo {
     width: 100%;
     height: auto; }
+  .header__menu-button {
+    position: relative;
+    border: none;
+    width: 2.4rem;
+    height: 2.4rem;
+    cursor: pointer;
+    margin: 0 1.6rem;
+    background-color: inherit; }
+    .header__menu-button-item {
+      position: absolute;
+      width: 2.4rem;
+      height: 3px;
+      left: 0;
+      border-radius: 3px;
+      background-color: var(--color-text); }
+      .header__menu-button-item:nth-child(1) {
+        top: 1.5px;
+        transform-origin: left center; }
+      .header__menu-button-item:nth-child(2) {
+        top: 10.5px;
+        transform-origin: left center; }
+      .header__menu-button-item:nth-child(3) {
+        top: 19.5px;
+        transform-origin: left center; }
