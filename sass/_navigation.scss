@@ -66,19 +66,28 @@
 
   &__button {
     display: block;
-    margin-top: 1.6rem;
     width: 100%;
     height: 6.4rem;
     border: none;
+    background-color: inherit;
+    font-size: 2rem;
+    text-align: start;
+    cursor: pointer;
+  }
+
+  &__button--focus {
     background-color: #0065ff;
     color: #ffffff;
-    font-size: 2rem;
+    text-align: center;
+    margin-top: 1.6rem;
   }
 
   &__button--outlined {
     background-color: #ffffff;
     color: var(--color-text);
     border: 1px solid #0065ff;
+    text-align: center;
+    margin-top: 1.6rem;
   }
 
   &__features {
