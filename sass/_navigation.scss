@@ -1,7 +1,6 @@
 .header {
-  height: 7rem;
-
   &__layout {
+    height: 7rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -50,5 +49,39 @@
         transform-origin: left center;
       }
     }
+  }
+}
+
+.navigation {
+  // height: calc(100vh - 7rem);
+  margin: 0 1.6rem;
+
+  &__categories {
+    font-size: 2rem;
+    border-bottom: solid 1px #dfe1e6;
+    min-height: 7rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    display: block;
+    margin-top: 1.6rem;
+    width: 100%;
+    height: 6.4rem;
+    border: none;
+    background-color: #0065ff;
+    color: #ffffff;
+    font-size: 2rem;
+  }
+
+  &__button--outlined {
+    background-color: #ffffff;
+    color: var(--color-text);
+    border: 1px solid #0065ff;
+  }
+
+  &__features {
+    display: none;
   }
 }
