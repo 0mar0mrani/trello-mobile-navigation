@@ -7,3 +7,14 @@
 
 html {
   font-size: 10px; }
+
+.header {
+  height: 7rem;
+  width: 100%; }
+  .header__logo-container {
+    width: 11rem;
+    height: auto;
+    margin: 1.6rem; }
+  .header__logo {
+    width: 100%;
+    height: auto; }

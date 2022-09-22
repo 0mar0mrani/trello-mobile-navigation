@@ -1,0 +1,16 @@
+.header {
+  height: 7rem;
+  width: 100%;
+
+  //   Logo
+  &__logo-container {
+    width: 11rem;
+    height: auto;
+    margin: 1.6rem;
+  }
+
+  &__logo {
+    width: 100%;
+    height: auto;
+  }
+}
