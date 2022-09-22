@@ -11,6 +11,11 @@
 html {
   font-size: 10px; }
 
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: 400; }
+
 .header__layout {
   height: 7rem;
   display: flex;
