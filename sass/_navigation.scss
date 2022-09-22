@@ -72,29 +72,29 @@
     font-size: 2rem;
     text-align: start;
     cursor: pointer;
-  }
 
-  &__button--arrow {
-    background-image: url('/assets/svg/arrow-right.svg');
-    background-repeat: no-repeat;
-    background-size: 0.8rem;
-    background-position: calc(100% - 1rem);
-    content: '';
-  }
+    &--arrow {
+      background-image: url('/assets/svg/arrow-right.svg');
+      background-repeat: no-repeat;
+      background-size: 0.8rem;
+      background-position: calc(100% - 1rem);
+      content: '';
+    }
 
-  &__button--focus {
-    background-color: #0065ff;
-    color: #ffffff;
-    text-align: center;
-    margin-top: 1.6rem;
-  }
+    &--focus {
+      background-color: #0065ff;
+      color: #ffffff;
+      text-align: center;
+      margin-top: 1.6rem;
+    }
 
-  &__button--outlined {
-    background-color: #ffffff;
-    color: var(--color-text);
-    border: 1px solid #0065ff;
-    text-align: center;
-    margin-top: 1.6rem;
+    &--outlined {
+      background-color: #ffffff;
+      color: var(--color-text);
+      border: 1px solid #0065ff;
+      text-align: center;
+      margin-top: 1.6rem;
+    }
   }
 
   &__features {
