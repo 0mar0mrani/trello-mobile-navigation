@@ -73,6 +73,12 @@ body {
     font-size: 2rem;
     text-align: start;
     cursor: pointer; }
+  .navigation__button--arrow {
+    background-image: url("/assets/svg/arrow-right.svg");
+    background-repeat: no-repeat;
+    background-size: 0.8rem;
+    background-position: calc(100% - 1rem);
+    content: ''; }
   .navigation__button--focus {
     background-color: #0065ff;
     color: #ffffff;

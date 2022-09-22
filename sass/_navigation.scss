@@ -53,7 +53,6 @@
 }
 
 .navigation {
-  // height: calc(100vh - 7rem);
   margin: 0 1.6rem;
 
   &__categories {
@@ -73,6 +72,14 @@
     font-size: 2rem;
     text-align: start;
     cursor: pointer;
+  }
+
+  &__button--arrow {
+    background-image: url('/assets/svg/arrow-right.svg');
+    background-repeat: no-repeat;
+    background-size: 0.8rem;
+    background-position: calc(100% - 1rem);
+    content: '';
   }
 
   &__button--focus {
