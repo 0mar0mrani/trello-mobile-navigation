@@ -130,7 +130,6 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
     transform: translateX(105%);
     opacity: 0;
     visibility: hidden;
@@ -142,6 +141,68 @@
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
+    }
+  }
+
+  &__list-item {
+    border-bottom: 1px solid #dfe1e6;
+    font-size: 1.6rem;
+    padding: 1.6rem 0;
+
+    &-topcontainer {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.96rem;
+    }
+  }
+
+  &__img-container {
+    width: 1.9rem;
+    height: 1.9rem;
+    display: block;
+    margin-right: 1.1rem;
+    margin-left: 0.24rem;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    filter: invert(48%) sepia(10%) saturate(853%) hue-rotate(178deg)
+      brightness(89%) contrast(94%);
+  }
+
+  &__pragraph {
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+  }
+
+  // More info
+  &__info {
+    &-container {
+      padding: 2.4rem;
+      background-color: var(--color-background-secondary);
+      margin-top: 1.7rem;
+      margin-bottom: 1.7rem;
+    }
+
+    &-headline {
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+    }
+
+    &-text {
+      font-size: 1.2rem;
+      margin-bottom: 1.6rem;
+      color: var(--color-text-light);
+    }
+
+    &-button {
+      font-size: 1.6rem;
+      display: inline-block;
+      background-color: #ffffff;
+      padding: 1.2rem 1.6rem;
+      border-radius: 5px;
+      border: 1px solid #6454c0;
     }
   }
 }
