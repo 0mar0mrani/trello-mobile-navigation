@@ -2,26 +2,41 @@
 // Buttons
 const mainMenuButton = document.querySelector('.header__menu-button');
 const featuresButton = document.querySelector('.navigation__button--features');
-const backButton = document.querySelector('.header__back');
+const backButton = document.querySelector('.header__back-button');
 
 // Elements
 const nav = document.querySelector('.navigation');
 const features = document.querySelector('.navigation__features');
+const headerLogo = document.querySelector('.header__logo-container');
+const buttonList = document.querySelectorAll('.navigation__button--sub-menu');
 
 // Open Mobile Navigation
 mainMenuButton.addEventListener('click', function () {
   nav.classList.toggle('navigation--open');
 });
 
-// Make navigation work, select buttons with class '.navigation__button--sub-menu'
-const buttonList = document.querySelectorAll('.navigation__button--sub-menu');
-
+// Allows for clicking in navigation to get to sub menus
 buttonList.forEach(function (i) {
   i.addEventListener('click', function (e) {
     const currentButton = e.target.innerText.toLowerCase();
 
-    el = document.querySelector(`.navigation__${currentButton}`);
+    const el = document.querySelector(`.navigation__${currentButton}`);
 
-    el.classList.toggle(`navigation__${currentButton}--open`);
+    el.classList.add(`navigation__${currentButton}--open`);
+    backButton.classList.add('header__back-button--open');
+    headerLogo.classList.add('header__logo-container--open');
   });
+});
+
+// Go back in mobile navigation
+backButton.addEventListener('click', function () {
+  for (let i = 0; i < buttonList.length; i++) {
+    const currentButton = buttonList[i].innerText.toLowerCase();
+
+    const el = document.querySelector(`.navigation__${currentButton}`);
+    el.classList.remove(`navigation__${currentButton}--open`);
+  }
+
+  backButton.classList.remove('header__back-button--open');
+  headerLogo.classList.remove('header__logo-container--open');
 });
