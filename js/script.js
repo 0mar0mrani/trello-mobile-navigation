@@ -13,13 +13,15 @@ mainMenuButton.addEventListener('click', function () {
   nav.classList.toggle('navigation--open');
 });
 
-// Open Features
-featuresButton.addEventListener('click', function () {
-  features.classList.toggle('navigation__features--open');
-  backButton.classList.add('header__back--open');
-});
+// Make navigation work, select buttons with class '.navigation__button--sub-menu'
+const buttonList = document.querySelectorAll('.navigation__button--sub-menu');
 
-// Go back
-backButton.addEventListener('click', function () {
-  features.classList.remove('navigation__features--open');
+buttonList.forEach(function (i) {
+  i.addEventListener('click', function (e) {
+    const currentButton = e.target.innerText.toLowerCase();
+
+    el = document.querySelector(`.navigation__${currentButton}`);
+
+    el.classList.toggle(`navigation__${currentButton}--open`);
+  });
 });
