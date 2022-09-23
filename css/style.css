@@ -57,7 +57,8 @@ body {
       transform-origin: left center; }
 
 .navigation {
-  margin: 0 1.6rem; }
+  margin: 0 1.6rem;
+  transform: translateY(); }
   .navigation__categories {
     font-size: 2rem;
     border-bottom: solid 1px #dfe1e6;
