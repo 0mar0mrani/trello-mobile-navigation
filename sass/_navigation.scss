@@ -148,7 +148,8 @@
   }
 
   // Navigation featured
-  &__features {
+  &__features,
+  &__solutions {
     position: absolute;
     background-color: #ffffff;
     top: 0;
@@ -227,6 +228,30 @@
       padding: 1.2rem 1.6rem;
       border-radius: 5px;
       border: 1px solid #6454c0;
+    }
+  }
+
+  // Remote teams
+  &__remote {
+    border-bottom: 1px solid #dfe1e6;
+    min-height: 7rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+
+    &-img-container {
+      margin-left: 0.5rem;
+      transition: all 0.3s;
+    }
+    // Arrow animation
+    &:hover &-img-container {
+      margin-left: 1rem;
     }
   }
 }
