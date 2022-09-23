@@ -1,12 +1,16 @@
 .header {
+  position: relative;
+
   &__layout {
     height: 7rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 10;
+    background-color: #ffffff;
   }
 
-  //   Logo
+  // Logo
   &__logo-container {
     width: 11rem;
     height: auto;
@@ -54,8 +58,24 @@
 }
 
 .navigation {
-  margin: 0 1.6rem;
-  transform: translateY();
+  position: absolute;
+  margin: 7rem 1.6rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -10;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.3s;
+
+  &--open {
+    transform: translateY(0%);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
 
   &__categories {
     font-size: 2rem;
