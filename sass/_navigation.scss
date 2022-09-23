@@ -123,7 +123,25 @@
     }
   }
 
+  // Navigation featured
   &__features {
-    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(105%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.3s;
+
+    &--open {
+      transform: translateX(0%);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
   }
 }
