@@ -15,6 +15,10 @@
     width: 11rem;
     height: auto;
     margin: 1.6rem;
+
+    &--open {
+      display: none;
+    }
   }
 
   &__logo {
@@ -24,8 +28,18 @@
 
   // Back Button
 
-  &__back {
+  &__back-button {
     display: none;
+    padding: 1.6rem;
+
+    &-text,
+    &-arrow {
+      display: inline-block;
+    }
+
+    &-arrow {
+      margin-right: 0.5rem;
+    }
 
     &--open {
       display: block;
@@ -109,7 +123,7 @@
     text-align: start;
     cursor: pointer;
 
-    &--arrow {
+    &--sub-menu {
       background-image: url('/assets/svg/arrow-right.svg');
       background-repeat: no-repeat;
       background-size: 0.8rem;
