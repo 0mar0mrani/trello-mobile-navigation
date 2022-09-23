@@ -22,7 +22,17 @@
     height: auto;
   }
 
-  // Button
+  // Back Button
+
+  &__back {
+    display: none;
+
+    &--open {
+      display: block;
+    }
+  }
+
+  // Menu Button
   &__menu-button {
     position: relative;
     border: none;
