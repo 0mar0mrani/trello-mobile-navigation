@@ -149,7 +149,8 @@
 
   // Navigation featured
   &__features,
-  &__solutions {
+  &__solutions,
+  &__plans {
     position: absolute;
     background-color: #ffffff;
     top: 0;
@@ -184,9 +185,19 @@
   &__img-container {
     width: 1.9rem;
     height: 1.9rem;
-    display: block;
+    display: inline-block;
     margin-right: 1.1rem;
     margin-left: 0.24rem;
+
+    &--bigger {
+      width: 3rem;
+      height: auto;
+    }
+
+    &--smaller {
+      width: 1.3rem;
+      height: auto;
+    }
   }
 
   &__img {
@@ -194,6 +205,10 @@
     height: auto;
     filter: invert(48%) sepia(10%) saturate(853%) hue-rotate(178deg)
       brightness(89%) contrast(94%);
+
+    &--color {
+      filter: none;
+    }
   }
 
   &__pragraph {
@@ -208,11 +223,21 @@
       background-color: var(--color-background-secondary);
       margin-top: 1.7rem;
       margin-bottom: 1.7rem;
+
+      &--yellow {
+        background-color: #fffdf4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
     }
 
     &-headline {
       font-size: 1.6rem;
+
       margin-bottom: 0.8rem;
+      display: inline-block;
     }
 
     &-text {
@@ -225,9 +250,13 @@
       font-size: 1.6rem;
       display: inline-block;
       background-color: #ffffff;
-      padding: 1.2rem 1.6rem;
+      padding: 1.5rem 1.6rem;
       border-radius: 5px;
       border: 1px solid #6454c0;
+    }
+
+    &-container--yellow &-button {
+      border: 1px solid #ffab00;
     }
   }
 
@@ -249,6 +278,7 @@
       margin-left: 0.5rem;
       transition: all 0.3s;
     }
+
     // Arrow animation
     &:hover &-img-container {
       margin-left: 1rem;
