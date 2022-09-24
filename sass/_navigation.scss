@@ -150,7 +150,8 @@
   // Navigation featured
   &__features,
   &__solutions,
-  &__plans {
+  &__plans,
+  &__resources {
     position: absolute;
     background-color: #ffffff;
     top: 0;
@@ -174,6 +175,10 @@
     border-bottom: 1px solid #dfe1e6;
     font-size: 1.6rem;
     padding: 1.6rem 0;
+
+    &--bold {
+      font-weight: 500;
+    }
 
     &-topcontainer {
       display: flex;
