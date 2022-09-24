@@ -1,31 +1,42 @@
 .header {
   position: relative;
+  height: 7rem;
+  z-index: 0;
+  display: flex;
+  align-items: center;
 
-  &__layout {
-    height: 7rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 10;
-    background-color: #ffffff;
+  @media screen and (min-width: 990px) {
+    & {
+      height: 6rem;
+    }
   }
 
-  // Logo and back-button container
-  &__logo-button-container {
+  &__layout {
     display: flex;
     align-items: center;
+    z-index: 10;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    @media screen and (min-width: 990px) {
+      & {
+        width: unset;
+      }
+    }
+  }
+
+  // Logo and back-button
+  &__logo-back-container {
+    position: relative;
   }
 
   // Logo
   &__logo-container {
     width: 11rem;
     height: auto;
-    margin-top: 2.38rem;
-    margin-left: 1.6rem;
+    margin: 0 1.6rem;
     transition: all 0.3s;
     transition-delay: 0.2s;
-    position: absolute;
-    top: 0;
 
     &--open {
       transform: translateX(-5rem);
@@ -46,13 +57,18 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    margin-top: 2.38rem;
     margin-left: 1.6rem;
     transition: all 0.3s;
     transition-delay: 0.2s;
     position: absolute;
     top: 0;
     transform: translateX(5rem);
+
+    @media screen and (min-width: 990px) {
+      & {
+        display: none;
+      }
+    }
 
     &-text,
     &-arrow {
@@ -81,6 +97,12 @@
     margin: 0 1.6rem;
     background-color: inherit;
     margin-left: auto;
+
+    @media screen and (min-width: 990px) {
+      & {
+        display: none;
+      }
+    }
 
     // Menu icon-button
     &-item {
@@ -142,6 +164,24 @@
   pointer-events: none;
   transition: transform 0.3s;
 
+  @media screen and (min-width: 990px) {
+    & {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0%);
+      margin: 0;
+      height: 0;
+      transform: unset;
+      transition: unset;
+      display: flex;
+      align-items: center;
+      justify-self: flex-end;
+      width: 100%;
+    }
+  }
+
   &--open {
     transform: translateY(0%);
     opacity: 1;
@@ -163,6 +203,12 @@
     &:first-child {
       border-top: solid 1px #dfe1e6;
     }
+
+    @media screen and (min-width: 990px) {
+      & {
+        border-bottom: unset;
+      }
+    }
   }
 
   &__button {
@@ -175,12 +221,28 @@
     text-align: start;
     cursor: pointer;
 
+    @media screen and (min-width: 990px) {
+      & {
+        width: unset;
+        height: 6rem;
+        padding: 0 1.6rem;
+        font-size: 1.6rem;
+      }
+    }
+
     &--sub-menu {
       background-image: url('/assets/svg/arrow-right.svg');
       background-repeat: no-repeat;
       background-size: 0.8rem;
       background-position: calc(100% - 1rem);
       content: '';
+
+      @media screen and (min-width: 990px) {
+        & {
+          background-image: url('/assets/svg/arrow-down.svg');
+          background-position: calc(100% - 0.5rem);
+        }
+      }
     }
 
     &--focus {
@@ -188,6 +250,14 @@
       color: #ffffff;
       text-align: center;
       margin-top: 1.6rem;
+
+      @media screen and (min-width: 990px) {
+        & {
+          margin-top: 0;
+          order: 1;
+          font-size: 2rem;
+        }
+      }
     }
 
     &--outlined {
@@ -196,6 +266,15 @@
       border: 1px solid #0065ff;
       text-align: center;
       margin-top: 1.6rem;
+
+      @media screen and (min-width: 990px) {
+        & {
+          margin-top: 0;
+          margin-left: auto;
+          border: none;
+          font-size: 2rem;
+        }
+      }
     }
   }
 
@@ -230,6 +309,14 @@
     min-height: 8rem;
     display: flex;
     align-items: center;
+
+    @media screen and (min-width: 990px) {
+      & {
+        border-bottom: unset;
+        padding: unset;
+        min-height: unset;
+      }
+    }
 
     &:first-child {
       border-top: solid 1px #dfe1e6;

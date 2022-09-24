@@ -19,20 +19,22 @@
   <body>
     <header class="header">
       <div class="header__layout">
-        <div class="header__logo-container">
-          <img
-            src="/assets/svg/trello-logo.svg"
-            alt="The Trello logo"
-            class="header__logo"
-          />
-        </div>
-
-        <button class="header__back-button">
-          <div class="header__back-button-arrow">
-            <img src="/assets/svg/arrow-left.svg" alt="" aria-hidden="true" />
+        <div class="header__logo-back-container">
+          <div class="header__logo-container">
+            <img
+              src="/assets/svg/trello-logo.svg"
+              alt="The Trello logo"
+              class="header__logo"
+            />
           </div>
-          <p class="header__back-button-text">Back</p>
-        </button>
+
+          <button class="header__back-button">
+            <div class="header__back-button-arrow">
+              <img src="/assets/svg/arrow-left.svg" alt="" aria-hidden="true" />
+            </div>
+            <p class="header__back-button-text">Back</p>
+          </button>
+        </div>
 
         <button class="header__menu-button">
           <span class="header__menu-button-item"></span>
@@ -41,7 +43,7 @@
         </button>
       </div>
 
-      <nav class="navigation navigation">
+      <nav class="navigation">
         <div class="navigation__categories">
           <button
             class="navigation__button navigation__button--sub-menu navigation__button--features"
@@ -498,11 +500,9 @@
           </div>
         </div>
 
-        <div>
-          <button class="navigation__button navigation__button--focus">
-            Get Trello for free
-          </button>
-        </div>
+        <button class="navigation__button navigation__button--focus">
+          Get Trello for free
+        </button>
 
         <button class="navigation__button navigation__button--outlined">
           Log in
