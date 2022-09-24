@@ -10,14 +10,28 @@
     background-color: #ffffff;
   }
 
+  // Logo and back-button container
+  &__logo-button-container {
+    display: flex;
+    align-items: center;
+  }
+
   // Logo
   &__logo-container {
     width: 11rem;
     height: auto;
-    margin: 1.6rem;
+    margin-top: 2.38rem;
+    margin-left: 1.6rem;
+    transition: all 0.3s;
+    transition-delay: 0.2s;
+    position: absolute;
+    top: 0;
 
     &--open {
-      display: none;
+      transform: translateX(-5rem);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
     }
   }
 
@@ -29,8 +43,16 @@
   // Back Button
 
   &__back-button {
-    display: none;
-    padding: 1.6rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    margin-top: 2.38rem;
+    margin-left: 1.6rem;
+    transition: all 0.3s;
+    transition-delay: 0.2s;
+    position: absolute;
+    top: 0;
+    transform: translateX(5rem);
 
     &-text,
     &-arrow {
@@ -42,7 +64,10 @@
     }
 
     &--open {
-      display: block;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: visible;
+      transform: translateX(0rem);
     }
   }
 
@@ -55,6 +80,7 @@
     cursor: pointer;
     margin: 0 1.6rem;
     background-color: inherit;
+    margin-left: auto;
 
     // Menu icon-button
     &-item {
