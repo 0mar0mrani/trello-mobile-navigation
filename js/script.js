@@ -25,6 +25,9 @@ buttonList.forEach(function (i) {
     el.classList.add(`navigation__${currentButton}--open`);
     backButton.classList.add('header__back-button--open');
     headerLogo.classList.add('header__logo-container--open');
+
+    // Transition main menu to left
+    nav.classList.add('navigation--sub-menu-open');
   });
 });
 
@@ -39,4 +42,7 @@ backButton.addEventListener('click', function () {
 
   backButton.classList.remove('header__back-button--open');
   headerLogo.classList.remove('header__logo-container--open');
+
+  // Transition main menu to left
+  nav.classList.remove('navigation--sub-menu-open');
 });

@@ -101,6 +101,10 @@
     pointer-events: auto;
   }
 
+  &--sub-menu-open {
+    transform: translateX(-100vw);
+  }
+
   &__categories {
     font-size: 2rem;
     border-bottom: solid 1px #dfe1e6;
@@ -157,14 +161,14 @@
     top: 0;
     left: 0;
     right: 0;
-    transform: translateX(105%);
+    transform: translateX(calc(100vw));
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: transform 0.3s;
 
     &--open {
-      transform: translateX(0%);
+      // transform: translateX(0%);
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
