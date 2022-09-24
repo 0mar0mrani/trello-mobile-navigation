@@ -56,7 +56,7 @@
     margin: 0 1.6rem;
     background-color: inherit;
 
-    // Menu icon
+    // Menu icon-button
     &-item {
       position: absolute;
       width: 2.4rem;
@@ -66,16 +66,37 @@
       background-color: var(--color-text);
 
       &:nth-child(1) {
-        top: 1.5px;
-        transform-origin: left center;
+        top: 0.15rem;
+        left: 0;
+        transition: all 0.2s;
       }
       &:nth-child(2) {
-        top: 10.5px;
-        transform-origin: left center;
+        top: 1.05rem;
+        left: 0;
+        transition: all 0.2s;
       }
       &:nth-child(3) {
-        top: 19.5px;
-        transform-origin: left center;
+        top: 1.95rem;
+        left: 0;
+        transition: all 0.2s;
+      }
+    }
+
+    &--open &-item {
+      &:nth-child(1) {
+        top: 1.05rem;
+        left: 0px;
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        top: 1.05rem;
+        opacity: 0;
+        width: 0%;
+      }
+      &:nth-child(3) {
+        left: 0px;
+        top: 1.05rem;
+        transform: rotate(-45deg);
       }
     }
   }

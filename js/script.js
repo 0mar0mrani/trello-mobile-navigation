@@ -13,6 +13,7 @@ const buttonList = document.querySelectorAll('.navigation__button--sub-menu');
 // Open Mobile Navigation
 mainMenuButton.addEventListener('click', function () {
   nav.classList.toggle('navigation--open');
+  mainMenuButton.classList.toggle('header__menu-button--open');
 });
 
 // Allows for clicking in navigation to get to sub menus
