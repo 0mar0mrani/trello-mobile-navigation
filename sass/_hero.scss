@@ -56,12 +56,6 @@
     justify-content: center;
   }
 
-  &__watch-video-text,
-  &__watch-video-text:visited {
-    color: #0065ff;
-    text-decoration-color: #0065ff;
-  }
-
   &__watch-video-icon {
     margin-left: 0.6rem;
 
@@ -70,5 +64,10 @@
       height: auto;
       display: block;
     }
+  }
+
+  & a {
+    text-decoration-color: #0065ff;
+    color: #0065ff;
   }
 }
