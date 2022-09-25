@@ -1,12 +1,21 @@
+.background-color {
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-background) 1px,
+    #fff
+  );
+}
+
 .hero {
   margin: 0 auto;
   max-width: 54rem;
   border-bottom: var(--border-bottom);
-  margin-top: 12.8rem;
+  margin-top: 6.4rem;
+  padding-top: 6.4rem;
   padding-bottom: 6.4rem;
   display: flex;
   flex-direction: column;
-
+  z-index: 0;
   //   Hero image
   &__image {
     width: 100%;
