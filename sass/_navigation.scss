@@ -7,6 +7,7 @@
   z-index: 0;
   display: flex;
   align-items: center;
+  box-shadow: 0px 0.5rem 1rem #091e4226;
 
   @media screen and (min-width: 990px) {
     & {
@@ -207,7 +208,6 @@
   &__categories {
     font-size: 2rem;
     border-bottom: solid 1px #dfe1e6;
-    min-height: 7rem;
     display: flex;
     align-items: center;
 
@@ -242,7 +242,7 @@
       & {
         width: unset;
         height: 6rem;
-        padding: 0 1.6rem;
+        padding: 0 2.2rem;
         font-size: 1.6rem;
       }
     }
@@ -257,7 +257,7 @@
       @media screen and (min-width: 990px) {
         & {
           background-image: url('/assets/svg/arrow-down.svg');
-          background-position: calc(100% - 0.5rem);
+          background-position: calc(100% - 1rem);
         }
       }
     }
