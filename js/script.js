@@ -11,9 +11,67 @@ const features = document.querySelector('.navigation__features');
 const headerLogo = document.querySelector('.header__logo-container');
 const buttonList = document.querySelectorAll('.navigation__button--sub-menu');
 
+const slideDown = function () {
+  nav.classList.add('navigation--slide-down');
+
+  nav.classList.remove(
+    'navigation--slide-up',
+    'navigation--slide-left',
+    'navigation--slide-right'
+  );
+};
+
+const slideUp = function () {
+  nav.classList.add('navigation--slide-up');
+
+  nav.classList.remove(
+    'navigation--slide-down',
+    'navigation--slide-left',
+    'navigation--slide-right'
+  );
+};
+
+const slideLeft = function () {
+  nav.classList.add('navigation--slide-left');
+
+  nav.classList.remove(
+    'navigation--slide-up',
+    'navigation--slide-right',
+    'navigation--slide-down'
+  );
+};
+
+const slideRight = function () {
+  nav.classList.add('navigation--slide-right');
+
+  nav.classList.remove(
+    'navigation--slide-left',
+    'navigation--slide-up',
+    'navigation--slide-down'
+  );
+};
+
+// Give one sub menu very high z-index and put the rest to 1.
+
 // Open Mobile Navigation
 mainMenuButton.addEventListener('click', function () {
-  nav.classList.toggle('navigation--open');
+  if (nav.classList.contains('navigation--slide-up')) {
+    slideDown();
+  } else if (
+    nav.classList.contains('navigation--slide-down') ||
+    nav.classList.contains('navigation--slide-left') ||
+    nav.classList.contains('navigation--slide-right')
+  ) {
+    slideUp();
+  } else {
+    slideDown();
+  }
+
+  // Swap back-button to Trello logo
+  backButton.classList.remove('header__back-button--open');
+  headerLogo.classList.remove('header__logo-container--open');
+
+  // Animation on burger menu
   mainMenuButton.classList.toggle('header__menu-button--open');
 
   // Make body not scrollable
@@ -23,16 +81,23 @@ mainMenuButton.addEventListener('click', function () {
 // Allows for clicking in navigation to get to sub menus
 buttonList.forEach(function (i) {
   i.addEventListener('click', function (e) {
-    const currentButton = e.target.innerText.toLowerCase();
+    // Reset all z-index for all menus
+    for (let i = 0; i < buttonList.length; i++) {
+      let currentButton = buttonList[i].innerText.toLowerCase();
+      document.getElementById(`${currentButton}`).style.zIndex = '1';
+    }
 
-    const el = document.querySelector(`.navigation__${currentButton}`);
+    // Get text from button clicked
+    currentButton = e.target.innerText.toLowerCase();
 
-    el.classList.add(`navigation__${currentButton}--open`);
+    // Bring sub menu to front
+    document.getElementById(`${currentButton}`).style.zIndex = '999999999';
+
     backButton.classList.add('header__back-button--open');
     headerLogo.classList.add('header__logo-container--open');
 
     // Transition main menu to left
-    nav.classList.add('navigation--sub-menu-open');
+    slideLeft();
   });
 });
 
@@ -49,5 +114,6 @@ backButton.addEventListener('click', function () {
   headerLogo.classList.remove('header__logo-container--open');
 
   // Transition main menu to left
-  nav.classList.remove('navigation--sub-menu-open');
+  nav.classList.remove('navigation--slide-left');
+  nav.classList.add('navigation--slide-right');
 });
