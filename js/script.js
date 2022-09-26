@@ -5,6 +5,7 @@ const featuresButton = document.querySelector('.navigation__button--features');
 const backButton = document.querySelector('.header__back-button');
 
 // Elements
+const body = document.querySelector('.body');
 const nav = document.querySelector('.navigation');
 const features = document.querySelector('.navigation__features');
 const headerLogo = document.querySelector('.header__logo-container');
@@ -14,6 +15,9 @@ const buttonList = document.querySelectorAll('.navigation__button--sub-menu');
 mainMenuButton.addEventListener('click', function () {
   nav.classList.toggle('navigation--open');
   mainMenuButton.classList.toggle('header__menu-button--open');
+
+  // Make body not scrollable
+  body.classList.toggle('body--no-scroll');
 });
 
 // Allows for clicking in navigation to get to sub menus

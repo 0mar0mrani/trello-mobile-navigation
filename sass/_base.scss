@@ -1,4 +1,4 @@
-body {
+.body {
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   font-weight: 400;
@@ -7,4 +7,14 @@ body {
   background-repeat: no-repeat;
   line-height: 1.25;
   color: var(--color-text);
+
+  &--no-scroll {
+    overflow-y: hidden;
+
+    @media screen and (min-width: 990px) {
+      & {
+        overflow-y: unset;
+      }
+    }
+  }
 }
