@@ -66,12 +66,17 @@
 
   &__watch-video-icon {
     margin-left: 0.6rem;
+    transition: all 0.3s;
 
     & img {
       width: 100%;
       height: auto;
       display: block;
     }
+  }
+
+  &__watch-video-container:hover &__watch-video-icon {
+    margin-left: 1rem;
   }
 
   & a {
