@@ -1,8 +1,8 @@
 .background-color {
   background-image: linear-gradient(
     to bottom,
-    var(--color-background) 1px,
-    #fff
+    var(--color-background-secondary) 1px,
+    var(--color-background-primary)
   );
 }
 
@@ -46,7 +46,7 @@
   // Sign up-button
   &__button {
     background-color: #0065ff;
-    color: #ffffff;
+    color: var(--color-background-primary);
     text-decoration: none;
     display: block;
     width: 100%;
