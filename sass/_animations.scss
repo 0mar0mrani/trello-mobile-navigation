@@ -1,0 +1,39 @@
+@keyframes slide-down {
+  from {
+    transform: translateY(-100vh);
+  }
+
+  to {
+    transform: translateY(0vh);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(0vh);
+  }
+
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(0vw);
+  }
+
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-100vw);
+  }
+
+  to {
+    transform: translateX(0vw);
+  }
+}
