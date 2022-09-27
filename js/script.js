@@ -7,6 +7,7 @@ const backButton = document.querySelector('.header__back-button');
 // Elements
 const body = document.querySelector('.body');
 const nav = document.querySelector('.navigation');
+const navMain = document.querySelector('.navigation_main');
 const features = document.querySelector('.navigation__features');
 const headerLogo = document.querySelector('.header__logo-container');
 const buttonList = document.querySelectorAll('.navigation__button--sub-menu');
@@ -51,18 +52,17 @@ const slideRight = function () {
   );
 };
 
-const resetSubMenu = function () {
+const resetMenu = function () {
+  document.getElementById('navigation__main').style.display = 'unset';
+
   for (let i = 0; i < buttonList.length; i++) {
     let currentButton = buttonList[i].innerText.toLowerCase();
-    document.getElementById(`${currentButton}`).style.zIndex = '1';
-    document.getElementById(`${currentButton}`).ariaHidden = 'true';
+
     document.getElementById(`${currentButton}`).style.display = 'none';
   }
+
+  document.getElementById('navigation__main').style.display = 'unset';
 };
-
-resetSubMenu();
-
-// Give one sub menu very high z-index and put the rest to 1.
 
 // Open Mobile Navigation
 mainMenuButton.addEventListener('click', function () {
@@ -88,21 +88,26 @@ mainMenuButton.addEventListener('click', function () {
   // Make body not scrollable
   body.classList.toggle('body--no-scroll');
 
-  resetSubMenu();
+  resetMenu();
 });
 
 // Allows for clicking in navigation to get to sub menus
 buttonList.forEach(function (i) {
   i.addEventListener('click', function (e) {
     // Reset all
-    resetSubMenu();
+    resetMenu();
 
     // Get text from button clicked
     currentButton = e.target.innerText.toLowerCase();
 
     // Bring sub menu to front and display = unset
-    document.getElementById(`${currentButton}`).style.zIndex = '999999999';
     document.getElementById(`${currentButton}`).style.display = 'unset';
+
+    // Navigation main = removed after .3 s
+    let delayInMilliseconds = 400;
+    setTimeout(function () {
+      document.getElementById('navigation__main').style.display = 'none';
+    }, delayInMilliseconds);
 
     backButton.classList.add('header__back-button--open');
     headerLogo.classList.add('header__logo-container--open');
@@ -114,13 +119,6 @@ buttonList.forEach(function (i) {
 
 // Go back in mobile navigation
 backButton.addEventListener('click', function (i) {
-  for (let i = 0; i < buttonList.length; i++) {
-    const currentButton = buttonList[i].innerText.toLowerCase();
-
-    const el = document.querySelector(`.navigation__${currentButton}`);
-    el.classList.remove(`navigation__${currentButton}--open`);
-  }
-
   backButton.classList.remove('header__back-button--open');
   headerLogo.classList.remove('header__logo-container--open');
 
@@ -128,8 +126,12 @@ backButton.addEventListener('click', function (i) {
   nav.classList.remove('navigation--slide-left');
   nav.classList.add('navigation--slide-right');
 
-  let delayInMilliseconds = 300;
+  // Get back Navigation Main
+  document.getElementById('navigation__main').style.display = 'block';
+
+  // Navigation main = removed after .3 s
+  let delayInMilliseconds = 400;
   setTimeout(function () {
-    resetSubMenu();
+    resetMenu();
   }, delayInMilliseconds);
 });
