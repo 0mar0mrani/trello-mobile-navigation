@@ -165,7 +165,7 @@
   left: 0;
   width: 100vw;
   z-index: -10;
-  transform: translateY(-100vh);
+  // transform: translateY(-200%);
 
   & a {
     text-decoration: none;
@@ -201,34 +201,11 @@
   }
 
   &--slide-up {
-    animation: slide-up forwards 0.4s ease;
+    animation: slide-up forwards 0.5s ease;
   }
 
   &--slide-down {
-    animation: slide-down forwards 0.4s ease;
-  }
-
-  &__categories {
-    font-size: 2rem;
-    border-bottom: solid 1px #dfe1e6;
-    display: flex;
-    align-items: center;
-
-    &:first-child {
-      border-top: solid 1px #dfe1e6;
-
-      @media screen and (min-width: 990px) {
-        & {
-          border-top: unset;
-        }
-      }
-    }
-
-    @media screen and (min-width: 990px) {
-      & {
-        border-bottom: unset;
-      }
-    }
+    animation: slide-down forwards 0.5s ease;
   }
 
   &__button {
