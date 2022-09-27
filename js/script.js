@@ -51,6 +51,17 @@ const slideRight = function () {
   );
 };
 
+const resetSubMenu = function () {
+  for (let i = 0; i < buttonList.length; i++) {
+    let currentButton = buttonList[i].innerText.toLowerCase();
+    document.getElementById(`${currentButton}`).style.zIndex = '1';
+    document.getElementById(`${currentButton}`).ariaHidden = 'true';
+    document.getElementById(`${currentButton}`).style.display = 'none';
+  }
+};
+
+resetSubMenu();
+
 // Give one sub menu very high z-index and put the rest to 1.
 
 // Open Mobile Navigation
@@ -76,22 +87,22 @@ mainMenuButton.addEventListener('click', function () {
 
   // Make body not scrollable
   body.classList.toggle('body--no-scroll');
+
+  resetSubMenu();
 });
 
 // Allows for clicking in navigation to get to sub menus
 buttonList.forEach(function (i) {
   i.addEventListener('click', function (e) {
-    // Reset all z-index for all menus
-    for (let i = 0; i < buttonList.length; i++) {
-      let currentButton = buttonList[i].innerText.toLowerCase();
-      document.getElementById(`${currentButton}`).style.zIndex = '1';
-    }
+    // Reset all
+    resetSubMenu();
 
     // Get text from button clicked
     currentButton = e.target.innerText.toLowerCase();
 
-    // Bring sub menu to front
+    // Bring sub menu to front and display = unset
     document.getElementById(`${currentButton}`).style.zIndex = '999999999';
+    document.getElementById(`${currentButton}`).style.display = 'unset';
 
     backButton.classList.add('header__back-button--open');
     headerLogo.classList.add('header__logo-container--open');
@@ -102,7 +113,7 @@ buttonList.forEach(function (i) {
 });
 
 // Go back in mobile navigation
-backButton.addEventListener('click', function () {
+backButton.addEventListener('click', function (i) {
   for (let i = 0; i < buttonList.length; i++) {
     const currentButton = buttonList[i].innerText.toLowerCase();
 
@@ -116,4 +127,9 @@ backButton.addEventListener('click', function () {
   // Transition main menu to left
   nav.classList.remove('navigation--slide-left');
   nav.classList.add('navigation--slide-right');
+
+  let delayInMilliseconds = 300;
+  setTimeout(function () {
+    resetSubMenu();
+  }, delayInMilliseconds);
 });
