@@ -400,6 +400,12 @@
       padding: 1.5rem 1.6rem;
       border-radius: 5px;
       border: 1px solid #6454c0;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: #eeebff;
+      }
     }
 
     &-container--yellow &-button {
