@@ -314,10 +314,7 @@
   }
 
   // Navigation
-  &__features,
-  &__solutions,
-  &__plans,
-  &__resources {
+  &__category {
     position: absolute;
     padding: 0 1.6rem;
     background-color: var(--color-background-primary);
