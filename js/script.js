@@ -86,7 +86,7 @@ function toggleSubMenuButton() {
 // Display Current Sub Menu 
 function displayCurrentSubMenu (event) {
 	let currentSubMenu = event.target.innerText.toLowerCase();
-	document.getElementById(`${currentSubMenu}`).classList.remove('hide');
+	document.querySelector(`#${currentSubMenu}`).classList.remove('hide');
 }
 
 // Open/close main menu
@@ -129,4 +129,4 @@ for (let i = 0; i < subMenuButtons.length; i++) {
 backButton.addEventListener('click', subMenuButtonsClickHandler)
 
 // Other
-const mobileNavigationWidth = 990;
+// const mobileNavigationWidth = 990;
