@@ -16,6 +16,7 @@ const headerLogo = document.querySelector('.header__logo-container');
 let mainNavigationOpen = false;
 let subNavigationOpen = false;
 const delayInMilliseconds = 400;
+const mobileNavigationWidth = 990;
 
 // Initialization 
 MobileNavigationInit();
@@ -39,6 +40,11 @@ function slide(direction) {
 		'navigation--slide-right'
 	);
 	nav.classList.add(`navigation--slide-${direction}`)
+}
+
+// Make elements behind navigation not scrollable
+function toggleNoScrollBehindNavigation () {
+	body.classList.toggle('body--no-scroll');
 }
 
 // Sub-menu - Display
@@ -90,13 +96,15 @@ function displayCurrentSubMenu (event) {
 }
 
 // Open/close main menu
-function mainMenuButtonClickHandler(event) {
+function mainMenuButtonClickHandler() {
 	if (mainNavigationOpen) {
 		slide('up');
 		MobileNavigationInit();
+		toggleNoScrollBehindNavigation();
 	}
 	else {
 		slide('down');
+		toggleNoScrollBehindNavigation();
 	}
 
 	toggleMainMenuButton()
@@ -104,7 +112,7 @@ function mainMenuButtonClickHandler(event) {
 }
 
 // Open/clos sub menu
-function subMenuButtonsClickHandler(event) {
+function subMenuButtonsClickHandler() {
 	if (subNavigationOpen) {
 		slide('right');
 		hideSubMenus()
@@ -129,4 +137,3 @@ for (let i = 0; i < subMenuButtons.length; i++) {
 backButton.addEventListener('click', subMenuButtonsClickHandler)
 
 // Other
-// const mobileNavigationWidth = 990;
