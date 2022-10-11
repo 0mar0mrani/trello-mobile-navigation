@@ -14,8 +14,8 @@ const headerLogo = document.querySelector('.header__logo-container');
 // Variables
 let mainNavigationOpen = false;
 let subNavigationOpen = false;
-const delayInMilliseconds = 400;
 const mobileNavigationWidth = 990;
+const delayInMilliseconds = 400;
 
 // Eventlisteners
 mainMenuButton.addEventListener('click', handlerMainMenuButtonClick);
@@ -60,7 +60,7 @@ function slide(direction) {
 		'navigation--slide-left',
 		'navigation--slide-right'
 	);
-	nav.classList.add(`navigation--slide-${direction}`)
+	nav.classList.add(`navigation--slide-${direction}`);
 }
 
 // Make elements behind navigation not scrollable
@@ -70,24 +70,27 @@ function toggleNoScrollBehindNavigation () {
 
 // Sub-menu - Display
 function hideSubMenus() {
+	setTimeout(addHideClass, delayInMilliseconds);
 
-  	setTimeout(function () {
+  	function addHideClass() {
 		for (let i = 0; i < navSubMenu.length; i++) {
 			navSubMenu[i].classList.add('hide');
-		};
-  }, delayInMilliseconds);  
+		}
+	}
 } 
 
 // Main-menu - Display
 function displayMainMenu() {
-
   	if(subNavigationOpen) {
     	navMainMenu.classList.remove('hide');   
   	} else {
-  	setTimeout(function () {
-    	navMainMenu.classList.add('hide');   
-  	}, delayInMilliseconds);  
-  	}
+
+		setTimeout(addHideClass, delayInMilliseconds);
+
+		function addHideClass() {
+			navMainMenu.classList.add('hide');   
+		}
+	}	
 } 
 
 // Switch hamburger menu/x-button
