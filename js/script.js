@@ -2,7 +2,6 @@
 // Buttons
 const mainMenuButton = document.querySelector('.header__menu-button');
 const subMenuButtons = document.querySelectorAll('.navigation__button--sub-menu');
-const featuresButton = document.querySelector('.navigation__button--features');
 const backButton = document.querySelector('.header__back-button');
 
 // Elements
