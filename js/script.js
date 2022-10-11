@@ -22,10 +22,23 @@ const mobileNavigationWidth = 990;
 mainMenuButton.addEventListener('click', handlerMainMenuButtonClick);
 
 for (let i = 0; i < subMenuButtons.length; i++) {
-	subMenuButtons[i].addEventListener('click', subMenuButtonsClickHandler);
+	subMenuButtons[i].addEventListener('click', handlerSubMenuButtons);
 }
 
-backButton.addEventListener('click', subMenuButtonsClickHandler)
+backButton.addEventListener('click', handlerBackButtonClick)
+
+// Handlers
+function handlerMainMenuButtonClick() {
+	toggleMainMenu();
+}
+
+function handlerSubMenuButtons() {
+	toggleSubMenu();
+}
+
+function handlerBackButtonClick() {
+	toggleSubMenu();
+}
 
 // Initialization 
 MobileNavigationInit();
@@ -105,7 +118,7 @@ function displayCurrentSubMenu (event) {
 }
 
 // Open/close main menu
-function handlerMainMenuButtonClick() {
+function toggleMainMenu() {
 	if (mainNavigationOpen) {
 		slide('up');
 		MobileNavigationInit();
@@ -121,7 +134,7 @@ function handlerMainMenuButtonClick() {
 }
 
 // Open/clos sub menu
-function subMenuButtonsClickHandler() {
+function toggleSubMenu() {
 	if (subNavigationOpen) {
 		slide('right');
 		hideSubMenus()
@@ -135,6 +148,3 @@ function subMenuButtonsClickHandler() {
 	toggleSubMenuButton();
 	subNavigationOpen = !subNavigationOpen;
 }
-
-
-
