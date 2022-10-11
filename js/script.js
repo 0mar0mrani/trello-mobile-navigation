@@ -1,23 +1,31 @@
 'strict';
+// // // //
 // Buttons
+// // // //
 const mainMenuButton = document.querySelector('.header__menu-button');
 const subMenuButtons = document.querySelectorAll('.navigation__button--sub-menu');
 const backButton = document.querySelector('.header__back-button');
 
+// // // //
 // Elements
+// // // //
 const body = document.querySelector('.body');
 const nav = document.querySelector('.navigation');
 const navMainMenu = document.querySelector('.navigation__main');
 const navSubMenu = document.querySelectorAll('.navigation__category');
 const headerLogo = document.querySelector('.header__logo-container');
 
+// // // //
 // Variables
+// // // //
 let mainNavigationOpen = false;
 let subNavigationOpen = false;
 const mobileNavigationWidth = 990;
 const delayInMilliseconds = 400;
 
+// // // //
 // Eventlisteners
+// // // //
 mainMenuButton.addEventListener('click', handlerMainMenuButtonClick);
 
 for (let i = 0; i < subMenuButtons.length; i++) {
@@ -26,7 +34,9 @@ for (let i = 0; i < subMenuButtons.length; i++) {
 
 backButton.addEventListener('click', handlerBackButtonClick)
 
+// // // //
 // Handlers
+// // // //
 function handlerMainMenuButtonClick() {
 	toggleMainMenu();
 }
@@ -39,7 +49,9 @@ function handlerBackButtonClick() {
 	toggleSubMenu();
 }
 
+// // // //
 // Initialization 
+// // // //
 MobileNavigationInit();
 
 function MobileNavigationInit () {
@@ -50,6 +62,42 @@ function MobileNavigationInit () {
 	headerLogo.classList.remove('header__logo-container--open');
 
 	subNavigationOpen = false;
+}
+
+// // // //
+// Functions
+// // // //
+
+// Open/close main menu
+function toggleMainMenu() {
+	if (mainNavigationOpen) {
+		slide('up');
+		MobileNavigationInit();
+		toggleNoScrollBehindNavigation();
+	}
+	else {
+		slide('down');
+		toggleNoScrollBehindNavigation();
+	}
+
+	toggleMainMenuButton()
+	mainNavigationOpen = !mainNavigationOpen;
+}
+
+// Open/clos sub menu
+function toggleSubMenu() {
+	if (subNavigationOpen) {
+		slide('right');
+		hideSubMenus()
+	}
+	else {
+		displayCurrentSubMenu(event)
+		slide('left');
+	}
+	
+	displayMainMenu()
+	toggleSubMenuButton();
+	subNavigationOpen = !subNavigationOpen;
 }
 
 // Move the navigation
@@ -68,7 +116,7 @@ function toggleNoScrollBehindNavigation () {
 	body.classList.toggle('body--no-scroll');
 }
 
-// Sub-menu - Display
+// Hide sub-menu 
 function hideSubMenus() {
 	setTimeout(addHideClass, delayInMilliseconds);
 
@@ -79,12 +127,11 @@ function hideSubMenus() {
 	}
 } 
 
-// Main-menu - Display
+// Hide/Display main menu 
 function displayMainMenu() {
   	if(subNavigationOpen) {
     	navMainMenu.classList.remove('hide');   
   	} else {
-
 		setTimeout(addHideClass, delayInMilliseconds);
 
 		function addHideClass() {
@@ -117,36 +164,4 @@ function toggleSubMenuButton() {
 function displayCurrentSubMenu (event) {
 	let currentSubMenu = event.target.innerText.toLowerCase();
 	document.querySelector(`#${currentSubMenu}`).classList.remove('hide');
-}
-
-// Open/close main menu
-function toggleMainMenu() {
-	if (mainNavigationOpen) {
-		slide('up');
-		MobileNavigationInit();
-		toggleNoScrollBehindNavigation();
-	}
-	else {
-		slide('down');
-		toggleNoScrollBehindNavigation();
-	}
-
-	toggleMainMenuButton()
-	mainNavigationOpen = !mainNavigationOpen;
-}
-
-// Open/clos sub menu
-function toggleSubMenu() {
-	if (subNavigationOpen) {
-		slide('right');
-		hideSubMenus()
-	}
-	else {
-		displayCurrentSubMenu(event)
-		slide('left');
-	}
-	
-	displayMainMenu()
-	toggleSubMenuButton();
-	subNavigationOpen = !subNavigationOpen;
 }
