@@ -18,6 +18,15 @@ let subNavigationOpen = false;
 const delayInMilliseconds = 400;
 const mobileNavigationWidth = 990;
 
+// Eventlisteners
+mainMenuButton.addEventListener('click', handlerMainMenuButtonClick);
+
+for (let i = 0; i < subMenuButtons.length; i++) {
+	subMenuButtons[i].addEventListener('click', subMenuButtonsClickHandler);
+}
+
+backButton.addEventListener('click', subMenuButtonsClickHandler)
+
 // Initialization 
 MobileNavigationInit();
 
@@ -96,7 +105,7 @@ function displayCurrentSubMenu (event) {
 }
 
 // Open/close main menu
-function mainMenuButtonClickHandler() {
+function handlerMainMenuButtonClick() {
 	if (mainNavigationOpen) {
 		slide('up');
 		MobileNavigationInit();
@@ -127,13 +136,5 @@ function subMenuButtonsClickHandler() {
 	subNavigationOpen = !subNavigationOpen;
 }
 
-// Eventlisteners
-mainMenuButton.addEventListener('click', mainMenuButtonClickHandler);
 
-for (let i = 0; i < subMenuButtons.length; i++) {
-	subMenuButtons[i].addEventListener('click', subMenuButtonsClickHandler);
-}
 
-backButton.addEventListener('click', subMenuButtonsClickHandler)
-
-// Other
