@@ -1,39 +1,39 @@
 @keyframes slide-down {
-  from {
-    transform: translateY(-200vh);
-  }
+	from {
+		transform: translateY(-200vh);
+	}
 
-  to {
-    transform: translateY(0vh);
-  }
+	to {
+		transform: translateY(0vh);
+	}
 }
 
 @keyframes slide-up {
-  from {
-    transform: translateY(0vh);
-  }
+	from {
+		transform: translateY(0vh);
+	}
 
-  to {
-    transform: translateY(-200vh);
-  }
+	to {
+		transform: translateY(-200vh);
+	}
 }
 
 @keyframes slide-left {
-  from {
-    transform: translateX(0vw);
-  }
+	from {
+		transform: translateX(0vw);
+	}
 
-  to {
-    transform: translateX(-100vw);
-  }
+	to {
+		transform: translateX(-100vw);
+	}
 }
 
 @keyframes slide-right {
-  from {
-    transform: translateX(-100vw);
-  }
+	from {
+		transform: translateX(-100vw);
+	}
 
-  to {
-    transform: translateX(0vw);
-  }
+	to {
+		transform: translateX(0vw);
+	}
 }
