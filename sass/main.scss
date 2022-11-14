@@ -4,6 +4,7 @@
 
 @import 'helper-class';
 @import 'base';
-@import 'navigation';
-@import 'hero';
-@import 'about';
+
+@import './modules/header';
+@import './modules/hero';
+@import './modules/about';
