@@ -1,7 +1,7 @@
 {
   "name": "trello",
   "version": "1.0.0",
-  "description": "A copy of the offical website for practice",
+  "description": "Trello Mobile Navigation Copy",
   "main": "index.js",
   "scripts": {
     "watch:sass": "sass --watch sass/main.scss css/style.css",
@@ -11,6 +11,6 @@
   "author": "Omar Omrani",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^7.0.3"
+    "sass": "^1.56.1"
   }
 }
